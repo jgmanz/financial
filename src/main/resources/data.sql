@@ -1,0 +1,2 @@
+/*INSERT INTO client (id, name, dateOfBirth, telephone ) VALUES (1, 'Jose', '1998-06-18', '55-666-111-333');
+INSERT INTO client (id, name, dateOfBirth, telephone ) VALUES (1, 'Mario', '2001-01-24', '55-666-111-444');*/
