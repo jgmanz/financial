@@ -38,5 +38,24 @@ public class Account {
         this.client = client;
         this.openDate = openDate;
     }
-    
+
+    public Long getId() {
+        return id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public LocalDate getOpenDate() {
+        return openDate;
+    }
+
+    public void setOpenDate(LocalDate openDate) {
+        this.openDate = openDate;
+    }
 }

@@ -5,10 +5,7 @@ import com.accenture.financial.service.AccountService;
 import com.accenture.financial.service.SpendingTransactionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -26,17 +23,21 @@ public class SpendingTransactionController {
         this.accountService = accountService;
     }
 
-    @GetMapping(value="/spendingamount/thisyear")
+    @GetMapping(value="/spending/rollingyear")
+    //rolling year
     public double getSpendingAmountThisYear(@RequestParam Long accountId) {
         Account account = accountService.getById(accountId);
-        return spendingTransactionService.getThisYearSpendingAmount(account);
+        return spendingTransactionService.getRollingYearSpendingAmount(account);
     }
     
-    @GetMapping(value="/spendingamount/lastyear")
+    @GetMapping(value="/spending/monthavg")
+    //last year
     public double getSpendingAmountLastYear(@RequestParam Long accountId) {
         Account account = accountService.getById(accountId);
-        return spendingTransactionService.getLastYearSpendingAmount(account);
+        return spendingTransactionService.getRollingYearMonthAvgSpendingAmount(account);
     }
-    
-    
 }
+
+/*
+JUNIT
+ */
